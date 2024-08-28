@@ -1,0 +1,114 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial, sans-serif';
+}
+
+.sidebar {
+  width: 250px;
+  background-color: rgb(61, 87, 61);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.user-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-links li {
+  margin-bottom: 15px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.nav-links a.active {
+  background-color: #8FBC8F;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
+.top-navbar {
+  background-color: DarkSeaGreen;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.card {
+  width: 250px;
+  padding: 20px;
+  border-radius: 8px;
+  color: #ffffff;
+  text-align: center;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-green {
+  background-color: #2E8B57;
+  /* Green */
+}
+
+.card-blue {
+  background-color: #1E90FF;
+  /* Blue */
+}
+
+.card h2 {
+  font-size: 2.5em;
+  margin: 0 0 10px 0;
+}
+
+.card p {
+  font-size: 1.1em;
+  margin: 0 0 15px 0;
+}
+
+.btn-info {
+  background-color: #ffffff;
+  color: rgb(61, 87, 61);
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.btn-info:hover {
+  background-color: #8FBC8F;
+  color: #ffffff;
+}

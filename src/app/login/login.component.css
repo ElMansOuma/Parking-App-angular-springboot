@@ -1,506 +1,146 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
-
-/* Styles de réinitialisation */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-/* Style pour le body avec background-image correct */
-body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/public/parking.png");
+.login-container {
+  display: flex;
   height: 100vh;
-  background-size: cover;
-  background-position: center;
-  overflow-x: hidden;
+  font-family: 'Arial, sans-serif';
 }
 
-.parent-div {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.header-section {
-  background: black;
-  color: white;
-  padding: 13px 13px 13px 30px;
-}
-
-.header-text {
-  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-  font-size: 200%;
-}
-
-.vertical-section-holder {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.vertical-section-1 {
-  flex: 0.65;
-  background-size: cover;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-}
-
-.vertical-section-2 {
-  flex: 0.35;
-}
-
-.login-signup-holder {
-  width: 360px;
-  padding: 10% 0 0;
-  margin: 0 auto;
-}
-
-.forms {
-  background: rgb(53, 86, 220);
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-}
-
-.forms .heading-text {
-  padding: 10px;
-  color: rgb(2, 2, 39);
-}
-
-.forms input {
-  font-family: "Roboto", sans-serif;
-  outline: 1px;
-  background: white;
-  width: 100%;
-  border: 0;
-  margin: 15px 0 0 0;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-.forms button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  margin: 10px 0 0 0;
-  background: #453FCF;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #ffffff;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/*
-.button {
-display: inline-block;
-border: none;
-text-decoration: none;
-font-family: "Roboto", sans-serif;
-text-transform: uppercase;
-background: #453FCF;
-width: 89%;
-padding: 15px;
-color: #ffffff;
-font-size: 14px;
-cursor: pointer;
-}
-*/
-.forms .message {
-  margin: 15px 0 0;
-  color: aliceblue;
-  font-size: 16px;
-}
-
-.forms .message a {
-  color: #453FCF;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.forms button:hover,
-.forms button:active {
-  background: rgb(2, 2, 39);
-}
-
-.button:hover,
-.button:active {
-  background: rgb(2, 2, 39);
-}
-
-.forms .login-form {
-  display: none;
-}
-
-.errors {
-  color: darkblue;
-  font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
-  font-size: 14px;
-  font-style: oblique;
-  text-align: left;
-}
-
-.indicator {
-  border-radius: 6px;
-  padding: 4px;
-  background-color: #453FCF;
-  height: 10px;
-  margin: 10px 0;
-  align-items: center;
-  justify-content: space-between;
-  display: none;
-}
-
-.indicator span {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background: lightgrey;
-  border-radius: 5px;
-}
-
-.indicator span:nth-child(2) {
-  margin: 0 3px;
-}
-
-.indicator span.active:before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
-}
-
-.indicator span.weak:before {
-  background-color: #ff4757;
-}
-
-.indicator span.medium:before {
-  background-color: orange;
-}
-
-.indicator span.strong:before {
-  background-color: #23ad5c;
-}
-
-.strength {
-  border-radius: 6px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  background-color: #453FCF;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  display: none;
-}
-
-.strength.weak {
-  color: #ff4757;
-}
-
-.strength.medium {
-  color: orange;
-}
-
-.strength.strong {
-  color: #23ad5c;
-}
-
-.footer {
-  font-family: Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', 'serif';
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  padding: 10px;
-  width: 100%;
-  background-color: black;
-  color: white;
-  text-align: center;
-}
-
-
-
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
-}
-
-.hero {
-  background: #1d2026;
-  min-height: 100vh;
-  width: 100%;
-  color: #fff;
-  position: relative;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  padding: 20px 8%;
-}
-
-nav .menu-img {
-  width: 25px;
-  margin-right: 20px;
-  cursor: pointer;
-}
-
-nav .logo {
-  width: 160px;
-  cursor: pointer;
-}
-
-nav ul {
+/* Left Visual Section */
+.visual-section {
   flex: 1;
-  text-align: right;
-}
-
-nav ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 0 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-}
-
-button {
-  background: #efefef;
-  height: 30px;
-  width: 60px;
-  border-radius: 20px;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
-  transition: background 0.5s;
-}
-
-button span {
-  display: block;
-  background: #999;
-  height: 26px;
-  width: 26px;
-  border-radius: 50%;
-  margin-left: 2px;
-  transition: background 0.5s, margin-left 0.5s;
-}
-
-.lamp-container {
-  position: absolute;
-  top: -20px;
-  left: 22%;
-  width: 200px;
-}
-
-.lamp {
-  width: 100%;
-}
-
-.light {
-  position: absolute;
-  top: 97%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 700px;
-  margin-left: -10px;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.text-container {
-  max-width: 600px;
-  margin-top: 7%;
-  margin-left: 50%;
-}
-
-.text-container h1 {
-  font-size: 80px;
-  font-weight: 400;
-}
-
-.text-container a {
-  text-decoration: none;
-  background: #00986f;
-  padding: 14px 40px;
-  display: inline-block;
-  color: #fff;
-  font-size: 18px;
-  margin-top: 30px;
-  border-radius: 30px;
-}
-
-.control {
+  background: linear-gradient(135deg, #8FBC8F, #2E8B57);
+  /* Adjusted gradient colors */
+  color: #ffffff;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: 150px;
-}
-
-.control .line {
-  width: 250px;
-  height: 4px;
-  background: #fff;
-  margin: 0 20px;
-  border-radius: 2px;
-}
-
-.control .line span {
-  width: 50%;
-  height: 8px;
-  margin-top: -2px;
-  border-radius: 4px;
-  background: #00986f;
-  display: block;
-}
-
-.active {
-  background: green;
-}
-
-.active span {
-  background: #fff;
-  margin-left: 31px;
-}
-
-.on {
-  opacity: 1;
-}
-
-
-
-
-.parent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #111;
-  width: 100%;
-  overflow: hidden;
-}
-
-.ring {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.ring i {
-  position: absolute;
-  inset: 0;
-  border: 2px solid #fff;
-  transition: 0.5s;
-}
-
-.ring i:nth-child(1) {
-  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-  animation: animate 6s linear infinite;
-}
-
-.ring i:nth-child(2) {
-  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-  animation: animate 4s linear infinite;
-}
-
-.ring i:nth-child(3) {
-  border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-  animation: animate2 10s linear infinite;
-}
-
-.ring:hover i {
-  border: 6px solid var(--clr);
-  filter: drop-shadow(0 0 20px var(--clr));
-}
-
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes animate2 {
-  0% {
-    transform: rotate(360deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-.login {
-  position: absolute;
-  width: 300px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
 }
 
-.login h2 {
-  font-size: 2em;
-  color: #fff;
+.visual-section h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
-.login .inputBx {
-  position: relative;
-  width: 100%;
-}
-
-.login .inputBx input {
-  position: relative;
-  width: 100%;
-  padding: 12px 20px;
-  background: transparent;
-  border: 2px solid #fff;
-  border-radius: 40px;
+.quote {
+  font-style: italic;
+  margin-top: 50px;
   font-size: 1.2em;
-  color: #fff;
-  box-shadow: none;
-  outline: none;
 }
 
-.login .inputBx input[type="submit"] {
+.quote-author {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Right Login Section */
+.login-section {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  max-width: 100px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #555555;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group {
   width: 100%;
-  background: #0078ff;
-  background: linear-gradient(45deg, #ff357a, #fff172);
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.forgot-password {
+  color: #2E8B57;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #2E8B57;
+  color: #ffffff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
-.login .inputBx input::placeholder {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.login .links {
-  position: relative;
-  width: 100%;
+.google-login-btn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
-.login .links a {
-  color: #fff;
+.google-login-btn img {
+  max-width: 20px;
+  margin-right: 10px;
+}
+
+.register {
+  font-size: 0.9em;
+  color: #555555;
+}
+
+.register a {
+  color: #2E8B57;
   text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
 }

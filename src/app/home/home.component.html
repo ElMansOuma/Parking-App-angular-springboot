@@ -1,26 +1,30 @@
-<div class="hero">
+<div class="home-page">
+  <div class="navbar">
+    <div class="logo">ParkZen</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a routerLink="about">About</a>
+      <a routerLink="/check">Check</a>
+      <a routerLink="/login">Login</a>
+      <a routerLink="/signup">Sign In</a>
 
-  <nav>
-    <img src="logo.png" class="logo">
-    <ul>
-      <li><a routerLink="/parking">Check</a></li>
-      <li><a routerLink="/signup">Sign Up</a></li>
-      <li><a routerLink="/login">Login</a></li>
-    </ul>
-  </nav>
 
-  <div class="lamp-container">
-    <img src="lamp.png" class="lamp">
-    <img src="light.png" class="light" id="light">
+    </div>
   </div>
 
-  <div class="text-container">
-    <h1>Parking</h1>
-    <br><br>
-    <p>
-      Park smart, drive happy</p>
-    <a routerLink="/parking">Check</a>
-
+  <div class="content">
+    <div class="text-section">
+      <h1>ParkZen</h1>
+      <p>
+        At ParkZen, we believe parking should be the least of your worries. Relax and let us handle the rest.
+      </p>
+      <div class="buttons">
+        <button class="btn-primary">Check</button>
+        <button class="btn-secondary">Login</button>
+      </div>
+    </div>
+    <div class="image-section">
+      <img src="home.png" />
+    </div>
   </div>
-
 </div>

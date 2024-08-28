@@ -1,149 +1,93 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
-}
-
-.hero {
-  background: #1d2026;
+.home-page {
+  background-color: DarkSeaGreen;
+  color: black;
+  font-family: 'Arial, sans-serif';
+  text-align: center;
+  padding: 20px;
   min-height: 100vh;
-  width: 100%;
-  color: #fff;
-  position: relative;
+  /* Ensure it covers full screen height */
 }
 
-nav {
+.navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
+  padding: 10px 20px;
 }
 
-nav .menu-img {
-  width: 25px;
-  margin-right: 20px;
-  cursor: pointer;
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
-nav .logo {
-  width: 160px;
-  cursor: pointer;
+.nav-links a {
+  color: black;
+  margin: 0 15px;
+  text-decoration: none;
 }
 
-nav ul {
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding: 0 50px;
+  /* Adjust padding for better spacing */
+}
+
+.text-section {
   flex: 1;
-  text-align: right;
+  padding-right: 50px;
+  /* Space between text and image */
 }
 
-nav ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 0 20px;
+.text-section h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
+.text-section p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
 }
 
-button {
-  background: #efefef;
-  height: 30px;
-  width: 60px;
-  border-radius: 20px;
-  border: 0;
-  outline: 0;
+.buttons .btn-primary,
+.buttons .btn-secondary {
+  padding: 20px 30px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.5s;
 }
 
-button span {
-  display: block;
-  background: #999;
-  height: 26px;
-  width: 26px;
-  border-radius: 50%;
-  margin-left: 2px;
-  transition: background 0.5s, margin-left 0.5s;
+.btn-primary {
+  background-color: #2E8B57;
+  color: #ffffff;
 }
 
-.lamp-container {
-  position: absolute;
-  top: -20px;
-  left: 22%;
-  width: 200px;
+.btn-secondary {
+  background-color: #2E8B57;
+  color: #ffffff;
 }
 
-.lamp {
-  width: 100%;
-}
-
-.light {
-  position: absolute;
-  top: 97%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 700px;
-  margin-left: -10px;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.text-container {
-  max-width: 600px;
-  margin-top: 7%;
-  margin-left: 50%;
-}
-
-.text-container h1 {
-  font-size: 80px;
-  font-weight: 400;
-}
-
-.text-container a {
-  text-decoration: none;
-  background: #00986f;
-  padding: 14px 40px;
-  display: inline-block;
-  color: #fff;
-  font-size: 18px;
-  margin-top: 30px;
-  border-radius: 30px;
-}
-
-.control {
+.image-section {
+  flex: 1;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-end;
-  margin-top: 150px;
+  padding-left: 20px;
+  /* Add some padding to improve spacing */
 }
 
-.control .line {
-  width: 250px;
-  height: 4px;
-  background: #fff;
-  margin: 0 20px;
-  border-radius: 2px;
-}
-
-.control .line span {
-  width: 50%;
-  height: 8px;
-  margin-top: -2px;
-  border-radius: 4px;
-  background: #00986f;
-  display: block;
-}
-
-.active {
-  background: green;
-}
-
-.active span {
-  background: #fff;
-  margin-left: 31px;
-}
-
-.on {
-  opacity: 1;
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  /* Optional: gives the image rounded corners */
+  object-fit: contain;
+  /* Ensure the image scales correctly within its container */
 }

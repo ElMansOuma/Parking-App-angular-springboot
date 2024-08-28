@@ -1,0 +1,131 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Parking Management</h2>
+    </div>
+    <div class="user-info">
+      <p>Fullname Example</p>
+    </div>
+    <ul class="nav-links">
+      <li><a routerLink="dashboard">Dashboard</a></li>
+      <li><a routerLink="booking">Booking</a></li>
+      <li><a routerLink="vehicle">Vehicle</a></li>
+      <li><a routerLink="parking-slot">Parking Slot</a></li>
+      <li><a routerLink="payment">Payment</a></li>
+      <li><a routerLink="user-management">User Management</a></li>
+      <li><a routerLink="logout">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+      <h1>Booking</h1>
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addBookingModal">+ Add</button>
+    </div>
+
+    <!-- Booking Table -->
+    <div class="table-container">
+      <h2>Booking Data Table</h2>
+      <table class="booking-table">
+        <thead>
+          <tr>
+            <th>Reference No.</th>
+            <th>Customer</th>
+            <th>Vehicle</th>
+            <th>Duration of Booking</th>
+            <th>Slot Number</th>
+            <th>Status</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7545</td>
+            <td>Data</td>
+            <td>RUV</td>
+            <td>3:00 hrs</td>
+            <td>5</td>
+            <td>Data</td>
+            <td>Data</td>
+            <td>
+              <a href="#" class="edit-btn">Edit</a>
+              <a href="#" class="delete-btn">Delete</a>
+            </td>
+          </tr>
+          <!-- Additional rows as needed -->
+        </tbody>
+      </table>
+
+      <!-- Pagination (if necessary) -->
+      <div class="pagination">
+        <span>Showing 1 to 2 of 2 entries</span>
+        <div class="pagination-controls">
+          <a href="#">Previous</a>
+          <a href="#">1</a>
+          <a href="#">Next</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Booking Modal -->
+    <div class="modal fade" id="addBookingModal" tabindex="-1" aria-labelledby="addBookingModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addBookingModalLabel">Add Booking</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="reference" class="form-label">Reference</label>
+                <input type="text" class="form-control" id="reference" placeholder="Enter Reference Number">
+              </div>
+              <div class="mb-3">
+                <label for="slot" class="form-label">Slot</label>
+                <input type="text" class="form-control" id="slot" placeholder="Enter Slot Number">
+              </div>
+              <div class="mb-3">
+                <label for="customer" class="form-label">Customer Name</label>
+                <input type="text" class="form-control" id="customer" placeholder="Enter Customer Name">
+              </div>
+              <div class="mb-3">
+                <label for="vehicle" class="form-label">Vehicle</label>
+                <input type="text" class="form-control" id="vehicle" placeholder="Enter Vehicle">
+              </div>
+              <div class="mb-3">
+                <label for="duration" class="form-label">Duration</label>
+                <input type="text" class="form-control" id="duration" placeholder="Enter Duration of Booking">
+              </div>
+              <div class="mb-3">
+                <label for="status" class="form-label">Booking Status</label>
+                <select class="form-select" id="status">
+                  <option>Pending</option>
+                  <option>Confirmed</option>
+                  <option>Cancelled</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="remarks" class="form-label">Remarks</label>
+                <textarea class="form-control" id="remarks" rows="3" placeholder="Enter Remarks"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      ParkZen Parking Management System. All rights reserved. </div>
+  </div>
+</div>

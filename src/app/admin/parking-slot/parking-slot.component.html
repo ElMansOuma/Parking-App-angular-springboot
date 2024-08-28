@@ -1,0 +1,111 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Parking Management</h2>
+    </div>
+    <div class="user-info">
+      <p>Fullname Example</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Booking</a></li>
+      <li><a href="#">Vehicle</a></li>
+      <li><a href="#">Parking Slot</a></li>
+      <li><a href="#">Payment</a></li>
+      <li><a href="#">User Management</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+      <h1>Parking Slot Management</h1>
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addParkingSlotModal">+ Add Parking
+        Slot</button>
+    </div>
+
+    <!-- Parking Slot Table -->
+    <div class="table-container">
+      <h2 class="section-title">Parking Slot Data Table</h2>
+      <table class="booking-table">
+        <thead>
+          <tr>
+            <th>Slot ID</th>
+            <th>Slot Number</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>P1</td>
+            <td>Ground Floor</td>
+            <td>Available</td>
+            <td>
+              <a href="#" class="edit-btn">Edit</a>
+              <a href="#" class="delete-btn">Delete</a>
+            </td>
+          </tr>
+          <!-- Additional rows as needed -->
+        </tbody>
+      </table>
+
+      <!-- Pagination (if necessary) -->
+      <div class="pagination">
+        <span>Showing 1 to 1 of 1 entries</span>
+        <div class="pagination-controls">
+          <a href="#">Previous</a>
+          <a href="#">1</a>
+          <a href="#">Next</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Parking Slot Modal -->
+    <div class="modal fade" id="addParkingSlotModal" tabindex="-1" aria-labelledby="addParkingSlotModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addParkingSlotModalLabel">Add Parking Slot</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="slotNumber" class="form-label">Slot Number</label>
+                <input type="text" class="form-control" id="slotNumber" placeholder="Enter Slot Number">
+              </div>
+              <div class="mb-3">
+                <label for="slotLocation" class="form-label">Location</label>
+                <input type="text" class="form-control" id="slotLocation" placeholder="Enter Location">
+              </div>
+              <div class="mb-3">
+                <label for="slotStatus" class="form-label">Status</label>
+                <select class="form-select" id="slotStatus">
+                  <option>Available</option>
+                  <option>Occupied</option>
+                  <option>Maintenance</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      ParkZen Parking Management System. All rights reserved.
+    </div>
+  </div>
+</div>
