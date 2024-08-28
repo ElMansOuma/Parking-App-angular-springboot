@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'swp-create-parking-lot',
-  templateUrl: './create-parking-lot.component.html'
+  templateUrl: './create-parking-lot.component.html',
+  standalone: true,
+  imports:[CommonModule, ReactiveFormsModule]
 })
 
 export class CreateParkingLotComponent implements OnInit {

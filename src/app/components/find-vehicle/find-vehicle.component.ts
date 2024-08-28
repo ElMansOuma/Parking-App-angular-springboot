@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ParkingLotService } from '../../core/services/parking-lot.service';
 import { ToastrService } from 'ngx-toastr';
 import { VEHICLE_TYPES } from '../../core';
+import { CommonModule } from '@angular/common';
+import { ParkingDetailsComponent } from '../parking-details/parking-details.component';
 
 interface VehicleDetail {
   slotNumber: number;
@@ -13,7 +15,9 @@ interface VehicleDetail {
 @Component({
   selector: 'swp-find-vehicle',
   templateUrl: './find-vehicle.component.html',
-  styleUrls: ['./find-vehicle.component.css']
+  standalone: true,
+  styleUrls: ['./find-vehicle.component.css'],
+  imports: [ CommonModule, ParkingDetailsComponent, ReactiveFormsModule]
 
 })
 export class FindVehicleComponent implements OnInit {

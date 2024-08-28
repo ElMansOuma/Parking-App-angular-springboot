@@ -7,10 +7,10 @@
           <div class="form-group col-md-6">
             <label for="inputRegistrationNumber">Vehicle Registration</label>
             <input class="form-control" type="text" placeholder="AZ-09-AZ-9999"
-              [ngClass]="{ 'is-invalid': f.registrationNumber.errors && f.registrationNumber.touched }"
+              [ngClass]="{ 'is-invalid': f['registrationNumber'].errors && f['registrationNumber'].touched }"
               formControlName="registrationNumber" id="inputRegistrationNumber" />
-            <div class="invalid-feedback" *ngIf="f.registrationNumber.errors">
-              <span *ngIf="f.registrationNumber.errors['pattern']">
+            <div class="invalid-feedback" *ngIf="f['registrationNumber'].errors">
+              <span *ngIf="f['registrationNumber'].errors['pattern']">
                 Registration Number cannot have special characters or white spaces
               </span>
             </div>

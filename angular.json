@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Parking-App": {
+    "parking-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -29,12 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -64,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Parking-App:build:production"
+              "buildTarget": "parking-app:build:production"
             },
             "development": {
-              "buildTarget": "Parking-App:build:development"
+              "buildTarget": "parking-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -99,6 +94,6 @@
     }
   },
   "cli": {
-    "analytics": "adc86cb8-2d42-4d0f-a4d5-a44cd9f0d09a"
+    "analytics": "4a540f12-8251-42ea-bce0-4ee3570913e4"
   }
 }

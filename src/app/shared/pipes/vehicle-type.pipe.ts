@@ -8,7 +8,8 @@ import { Pipe, PipeTransform } from '@angular/core';
  *   formats to: 'Motorcycle'
 */
 @Pipe({
-  name: 'vehicleType'
+  name: 'vehicleType',
+  standalone: true,
 })
 export class VehicleTypePipe implements PipeTransform {
 

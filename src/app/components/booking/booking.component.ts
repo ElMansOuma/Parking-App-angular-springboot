@@ -1,24 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ParkingLotService } from '../../core/services/parking-lot.service';
 import { VEHICLE_TYPES } from '../../core';
 import { CommonModule } from '@angular/common';
+import { SpotConverterPipe } from '../../shared';
+import { FindVehicleComponent } from '../find-vehicle/find-vehicle.component';
 
 
 @Component({
   selector: 'swp-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css'],
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    CommonModule
+  standalone:true,
+  imports:[
+    FormsModule, 
+    ReactiveFormsModule, 
+    CommonModule,
+    SpotConverterPipe,
+    FindVehicleComponent,
+
   ]
 })
 export class BookingComponent implements OnInit {
   submitted = false;
-  parkingForm;
+  parkingForm: FormGroup;
   parkingSpace = {
     finding: false,
     spaceAvailable: []

@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ParkingLotService } from '../../core/services/parking-lot.service';
 import { ToastrService } from 'ngx-toastr';
+import { CreateParkingLotComponent } from './create-parking-lot/create-parking-lot.component';
+import { ParkingDetailsComponent } from '../parking-details/parking-details.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'swp-parking-status',
+  standalone: true,
+  imports:[CommonModule, CreateParkingLotComponent, ParkingDetailsComponent],
   template: `
     <div class="status-wrapper">
       <div class="card">

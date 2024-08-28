@@ -8,7 +8,8 @@ import { Pipe, PipeTransform } from '@angular/core';
  *   formats to: 2
 */
 @Pipe({
-  name: 'spotConverter'
+  name: 'spotConverter',
+  standalone: true,
 })
 export class SpotConverterPipe implements PipeTransform {
 
