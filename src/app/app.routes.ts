@@ -8,8 +8,8 @@ import { VehiculeComponent } from './admin/vehicule/vehicule.component';
 import { ParkingSlotComponent } from './admin/parking-slot/parking-slot.component';
 import { PaymentComponent } from './admin/payment/payment.component';
 import { UserManagementComponent } from './admin/user-management/user-management.component';
-import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
-import { BookingRequestComponent } from './user/booking-request/booking-request.component';
+import { UserDashboardComponent } from './User/user-dashboard/user-dashboard.component';
+import { BookingRequestComponent } from './User/booking-request/booking-request.component';
 import { LogoutComponent } from './logout/logout.component';
 
 
