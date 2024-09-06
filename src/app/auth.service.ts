@@ -2,43 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
-
-@Injectable({
-  providedIn: 'root'  // Service is available globally in the app
-})
+import { User } from './models/user.model';
+@Injectable()
 export class AuthService {
 
-  private apiUrl = `${environment.api_url}/auth`;
+  private apiUrl = `${environment.api_url}/api`;
 
   constructor(private http: HttpClient) { }
 
-  // User registration
-  signUp(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/signup`, userData);
+  // Function for logging in a user
+  login(email: string, password: string): Observable<User> {
+    const loginPayload = {
+      email: email,
+      password: password
+    };
+    return this.http.get<User>(`${this.apiUrl}/login`, { params: loginPayload });
   }
 
-  // User login
-  login(credentials: { username: string, password: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, credentials);
+  // Function for registering a user
+  register(username: string, email: string, password: string): Observable<User> {
+    const registerPayload = {
+      username: username,
+      email: email,
+      password: password
+    };
+    return this.http.post<User>(`${this.apiUrl}/register`, registerPayload);
   }
 
-  // User logout
-  logout(): void {
-    localStorage.removeItem('token'); // Remove the token from localStorage
-  }
-
-  // Check if user is authenticated
-  isAuthenticated(): boolean {
-    return !!localStorage.getItem('token');
-  }
-
-  // Store authentication token
-  setToken(token: string): void {
-    localStorage.setItem('token', token);
-  }
-
-  // Retrieve authentication token
-  getToken(): string | null {
-    return localStorage.getItem('token');
-  }
 }

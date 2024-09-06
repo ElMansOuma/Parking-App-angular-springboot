@@ -25,7 +25,6 @@ export const routes: Routes = [
   { path: 'booking-request', component: BookingRequestComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
 
 
 

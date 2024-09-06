@@ -1,28 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [AuthService]
 })
 export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private auth: AuthService) { }
 
   login() {
-    const loginPayload = {
-      email: this.email,
-      password: this.password
-    };
+    this.auth.login(this.email, this.password).subscribe(
+      (response: any) => {
+        console.log(response);
+      }
+      ,
+      (error: any) => {
+        console.log(error);
+      }
 
-    this.http.get(`http://localhost:8082/api/login?email=${this.email}&password=${this.password}`)
-      .subscribe(response => {
-        console.log('Login successful', response);
-      }, error => {
-        console.error('Login failed', error);
-      });
+    );
   }
 }

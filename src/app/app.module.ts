@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
       timeOut: 6000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
-    })
+    }),
+    RouterModule.forRoot(routes)
   ],
   providers: [
     AuthService
