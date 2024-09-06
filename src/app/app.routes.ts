@@ -12,9 +12,7 @@ import { UserDashboardComponent } from './User/user-dashboard/user-dashboard.com
 import { BookingRequestComponent } from './User/booking-request/booking-request.component';
 import { LogoutComponent } from './logout/logout.component';
 
-
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
@@ -26,6 +24,8 @@ export const routes: Routes = [
   { path: 'user-dashboard', component: UserDashboardComponent },
   { path: 'booking-request', component: BookingRequestComponent },
   { path: 'logout', component: LogoutComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 
 
 
