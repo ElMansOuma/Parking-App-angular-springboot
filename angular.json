@@ -27,12 +27,10 @@
               }
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+		          "./node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -60,7 +58,6 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {},
           "configurations": {
             "production": {
               "buildTarget": "parking-app:build:production"
@@ -98,6 +95,6 @@
     }
   },
   "cli": {
-    "analytics": "4a540f12-8251-42ea-bce0-4ee3570913e4"
+    "analytics": "fbda61a2-3305-422f-a4a1-4cbc7dd915bd"
   }
 }

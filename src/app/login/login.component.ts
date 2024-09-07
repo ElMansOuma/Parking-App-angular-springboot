@@ -1,13 +1,16 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
 import { response } from 'express';
+import { AuthService } from '../auth.service';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [AuthService]
+  standalone:true,
+  imports:[FormsModule, HttpClientModule],
+  providers: [AuthService, NgModel]
 })
 export class LoginComponent {
   email: string = '';

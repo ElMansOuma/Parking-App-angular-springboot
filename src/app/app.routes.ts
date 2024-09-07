@@ -7,12 +7,13 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { VehiculeComponent } from './admin/vehicule/vehicule.component';
 import { ParkingSlotComponent } from './admin/parking-slot/parking-slot.component';
 import { PaymentComponent } from './admin/payment/payment.component';
-import { UserManagementComponent } from './admin/user-management/user-management.component';
 import { UserDashboardComponent } from './User/user-dashboard/user-dashboard.component';
 import { BookingRequestComponent } from './User/booking-request/booking-request.component';
 import { LogoutComponent } from './logout/logout.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const routes: Routes = [
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
@@ -25,8 +26,5 @@ export const routes: Routes = [
   { path: 'booking-request', component: BookingRequestComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'dashboard', component: DashboardComponent },
-
-
-
-
+  { path: '**', component: PageNotFoundComponent }
 ];
