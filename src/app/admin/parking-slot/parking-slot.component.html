@@ -41,29 +41,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>P1</td>
-            <td>Ground Floor</td>
-            <td>Available</td>
+          <tr *ngFor="let slot of slots">
+            <td>{{ slot.id }}</td>
+            <td>{{ slot.slotNumber }}</td>
+            <td>{{ slot.location }}</td>
+            <td>{{ slot.status }}</td>
             <td>
-              <a href="#" class="edit-btn">Edit</a>
-              <a href="#" class="delete-btn">Delete</a>
+              <button class="edit-btn" (click)="editSlot(slot)">Edit</button>
+              <button class="delete-btn" (click)="deleteSlot(slot.id)">Delete</button>
             </td>
           </tr>
-          <!-- Additional rows as needed -->
         </tbody>
       </table>
-
-      <!-- Pagination (if necessary) -->
-      <div class="pagination">
-        <span>Showing 1 to 1 of 1 entries</span>
-        <div class="pagination-controls">
-          <a href="#">Previous</a>
-          <a href="#">1</a>
-          <a href="#">Next</a>
-        </div>
-      </div>
     </div>
 
     <!-- Add Parking Slot Modal -->
@@ -79,15 +68,15 @@
             <form>
               <div class="mb-3">
                 <label for="slotNumber" class="form-label">Slot Number</label>
-                <input type="text" class="form-control" id="slotNumber" placeholder="Enter Slot Number">
+                <input type="text" class="form-control" id="slotNumber" [(ngModel)]="newSlot.slotNumber">
               </div>
               <div class="mb-3">
                 <label for="slotLocation" class="form-label">Location</label>
-                <input type="text" class="form-control" id="slotLocation" placeholder="Enter Location">
+                <input type="text" class="form-control" id="slotLocation" [(ngModel)]="newSlot.location">
               </div>
               <div class="mb-3">
                 <label for="slotStatus" class="form-label">Status</label>
-                <select class="form-select" id="slotStatus">
+                <select class="form-select" id="slotStatus" [(ngModel)]="newSlot.status">
                   <option>Available</option>
                   <option>Occupied</option>
                   <option>Maintenance</option>
@@ -97,7 +86,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" (click)="addSlot()">Submit</button>
           </div>
         </div>
       </div>

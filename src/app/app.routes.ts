@@ -3,14 +3,13 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { BookingComponent } from './user/booking/booking.component';
-import { DashboardComponent } from './user/dashboard/dashboard.component';
-import { ParkingSlotComponent } from './user/parking-slot/parking-slot.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { PaymentComponent } from './user/payment/payment.component';
-import { UserDashboardComponent } from './admin/user-dashboard/user-dashboard.component';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { BookingRequestComponent } from './admin/booking-request/booking-request.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UserManagementComponent } from './user/user-management/user-management.component';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
 import { VehiculeComponent } from './user/vehicule/vehicule.component';
 
 export const routes: Routes = [

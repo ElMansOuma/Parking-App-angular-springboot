@@ -6,9 +6,9 @@
       <h3>Fullname Example</h3>
     </div>
     <ul class="nav-links">
-      <li><a href="/dashboard" class="active">Dashboard</a></li>
-      <li><a href="/booking-request">Booking Request</a></li>
-      <li><a href="/logout">Logout</a></li>
+      <li><a routerLink="/dashboard" class="active">Dashboard</a></li>
+      <li><a routerLink="/booking-request">Booking Request</a></li>
+      <li><a (click)="logout()" class="logout">Logout</a></li>
     </ul>
   </div>
 
@@ -22,12 +22,12 @@
     <!-- Dashboard Cards -->
     <div class="dashboard-cards">
       <div class="card card-green">
-        <h2>53</h2>
+        <h2>{{ parkingSlotsAvailable }}</h2>
         <p>Total Parking Slots Available</p>
         <a href="#" class="btn btn-info">More info</a>
       </div>
       <div class="card card-blue">
-        <h2>53</h2>
+        <h2>{{ ownedVehicles }}</h2>
         <p>Total Owned Vehicles</p>
         <a href="#" class="btn btn-info">More info</a>
       </div>
