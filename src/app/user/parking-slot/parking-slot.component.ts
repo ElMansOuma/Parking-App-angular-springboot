@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-parking-slot',
   standalone: true,
-  imports: [],
   templateUrl: './parking-slot.component.html',
-  styleUrl: './parking-slot.component.css'
+  styleUrl: './parking-slot.component.css',
+  imports: [RouterLink]
 })
 export class ParkingSlotComponent {
   slots = [

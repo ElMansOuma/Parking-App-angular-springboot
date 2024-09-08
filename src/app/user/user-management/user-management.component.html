@@ -8,13 +8,13 @@
       <p>Fullname Example</p>
     </div>
     <ul class="nav-links">
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Booking</a></li>
-      <li><a href="#">Vehicle</a></li>
-      <li><a href="#">Parking Slot</a></li>
-      <li><a href="#">Payment</a></li>
-      <li><a href="#">User Management</a></li>
-      <li><a href="#">Logout</a></li>
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+      <li><a routerLink="/booking">Booking</a></li>
+      <li><a routerLink="/vehicule">Vehicle</a></li>
+      <li><a routerLink="/parking-slot">Parking Slot</a></li>
+      <li><a routerLink="/payment">Payment</a></li>
+      <li><a routerLink="/user-management">User Management</a></li>
+      <li><a routerLink="/logout">Logout</a></li>
     </ul>
   </div>
 
@@ -22,20 +22,20 @@
   <div class="main-content">
     <!-- Top Navbar -->
     <div class="top-navbar">
-      <h1>Parking Slot Management</h1>
-      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addParkingSlotModal">+ Add Parking
-        Slot</button>
+      <h1>User Management</h1>
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addUserModal">+ Add User</button>
     </div>
 
-    <!-- Parking Slot Table -->
+    <!-- User Table -->
     <div class="table-container">
-      <h2 class="section-title">Parking Slot Data Table</h2>
+      <h2 class="section-title">User Data Table</h2>
       <table class="booking-table">
         <thead>
           <tr>
-            <th>Slot ID</th>
-            <th>Slot Number</th>
-            <th>Location</th>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
             <th>Status</th>
             <th>Actions</th>
           </tr>
@@ -43,9 +43,10 @@
         <tbody>
           <tr>
             <td>1</td>
-            <td>P1</td>
-            <td>Ground Floor</td>
-            <td>Available</td>
+            <td>johndoe</td>
+            <td>johndoe example.com</td>
+            <td>Admin</td>
+            <td>Active</td>
             <td>
               <a href="#" class="edit-btn">Edit</a>
               <a href="#" class="delete-btn">Delete</a>
@@ -66,31 +67,37 @@
       </div>
     </div>
 
-    <!-- Add Parking Slot Modal -->
-    <div class="modal fade" id="addParkingSlotModal" tabindex="-1" aria-labelledby="addParkingSlotModalLabel"
-      aria-hidden="true">
+    <!-- Add User Modal -->
+    <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="addParkingSlotModalLabel">Add Parking Slot</h5>
+            <h5 class="modal-title" id="addUserModalLabel">Add User</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="slotNumber" class="form-label">Slot Number</label>
-                <input type="text" class="form-control" id="slotNumber" placeholder="Enter Slot Number">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter Username">
               </div>
               <div class="mb-3">
-                <label for="slotLocation" class="form-label">Location</label>
-                <input type="text" class="form-control" id="slotLocation" placeholder="Enter Location">
+                <label for="userEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="userEmail" placeholder="Enter Email">
               </div>
               <div class="mb-3">
-                <label for="slotStatus" class="form-label">Status</label>
-                <select class="form-select" id="slotStatus">
-                  <option>Available</option>
-                  <option>Occupied</option>
-                  <option>Maintenance</option>
+                <label for="userRole" class="form-label">Role</label>
+                <select class="form-select" id="userRole">
+                  <option>Admin</option>
+                  <option>User</option>
+                  <!-- Additional roles as needed -->
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="userStatus" class="form-label">Status</label>
+                <select class="form-select" id="userStatus">
+                  <option>Active</option>
+                  <option>Inactive</option>
                 </select>
               </div>
             </form>

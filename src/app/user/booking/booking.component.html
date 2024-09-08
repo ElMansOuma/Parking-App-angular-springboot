@@ -1,3 +1,4 @@
+<!-- src/app/user/booking/booking.component.html -->
 <div class="dashboard-container">
   <!-- Sidebar -->
   <div class="sidebar">
@@ -10,7 +11,7 @@
     <ul class="nav-links">
       <li><a routerLink="dashboard">Dashboard</a></li>
       <li><a routerLink="booking">Booking</a></li>
-      <li><a routerLink="vehicle">Vehicle</a></li>
+      <li><a routerLink="vehicule">Vehicle</a></li>
       <li><a routerLink="parking-slot">Parking Slot</a></li>
       <li><a routerLink="payment">Payment</a></li>
       <li><a routerLink="user-management">User Management</a></li>
@@ -43,31 +44,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>7545</td>
-            <td>Data</td>
-            <td>RUV</td>
-            <td>3:00 hrs</td>
-            <td>5</td>
-            <td>Data</td>
-            <td>Data</td>
+          <tr *ngFor="let booking of bookings">
+            <td>{{ booking.reference }}</td>
+            <td>{{ booking.customerName }}</td>
+            <td>{{ booking.vehicle }}</td>
+            <td>{{ booking.duration }}</td>
+            <td>{{ booking.slot }}</td>
+            <td>{{ booking.status }}</td>
+            <td>{{ booking.remarks }}</td>
             <td>
-              <a href="#" class="edit-btn">Edit</a>
-              <a href="#" class="delete-btn">Delete</a>
+              <button *ngIf="booking.id !== undefined" (click)="deleteBooking(booking.id)">Delete</button>
             </td>
           </tr>
-          <!-- Additional rows as needed -->
         </tbody>
       </table>
 
-      <!-- Pagination (if necessary) -->
+      <!-- Pagination -->
       <div class="pagination">
-        <span>Showing 1 to 2 of 2 entries</span>
-        <div class="pagination-controls">
-          <a href="#">Previous</a>
-          <a href="#">1</a>
-          <a href="#">Next</a>
-        </div>
+        <span>Showing 1 to {{ bookings.length }} of {{ bookings.length }} entries</span>
       </div>
     </div>
 
@@ -84,27 +78,32 @@
             <form>
               <div class="mb-3">
                 <label for="reference" class="form-label">Reference</label>
-                <input type="text" class="form-control" id="reference" placeholder="Enter Reference Number">
+                <input type="text" class="form-control" id="reference" placeholder="Enter Reference Number"
+                  [(ngModel)]="book.reference" name="reference" required>
               </div>
               <div class="mb-3">
                 <label for="slot" class="form-label">Slot</label>
-                <input type="text" class="form-control" id="slot" placeholder="Enter Slot Number">
+                <input type="text" class="form-control" id="slot" placeholder="Enter Slot Number"
+                  [(ngModel)]="book.slot" name="slot" required>
               </div>
               <div class="mb-3">
                 <label for="customer" class="form-label">Customer Name</label>
-                <input type="text" class="form-control" id="customer" placeholder="Enter Customer Name">
+                <input type="text" class="form-control" id="customer" placeholder="Enter Customer Name"
+                  [(ngModel)]="book.customerName" name="customerName" required>
               </div>
               <div class="mb-3">
                 <label for="vehicle" class="form-label">Vehicle</label>
-                <input type="text" class="form-control" id="vehicle" placeholder="Enter Vehicle">
+                <input type="text" class="form-control" id="vehicle" placeholder="Enter Vehicle"
+                  [(ngModel)]="book.vehicle" name="vehicle" required>
               </div>
               <div class="mb-3">
                 <label for="duration" class="form-label">Duration</label>
-                <input type="text" class="form-control" id="duration" placeholder="Enter Duration of Booking">
+                <input type="text" class="form-control" id="duration" placeholder="Enter Duration of Booking"
+                  [(ngModel)]="book.duration" name="duration" required>
               </div>
               <div class="mb-3">
                 <label for="status" class="form-label">Booking Status</label>
-                <select class="form-select" id="status">
+                <select class="form-select" id="status" [(ngModel)]="book.status" name="status" required>
                   <option>Pending</option>
                   <option>Confirmed</option>
                   <option>Cancelled</option>
@@ -112,20 +111,17 @@
               </div>
               <div class="mb-3">
                 <label for="remarks" class="form-label">Remarks</label>
-                <textarea class="form-control" id="remarks" rows="3" placeholder="Enter Remarks"></textarea>
+                <textarea class="form-control" id="remarks" rows="3" placeholder="Enter Remarks"
+                  [(ngModel)]="book.remarks" name="remarks"></textarea>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" (click)="addBooking()">Submit</button>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      ParkZen Parking Management System. All rights reserved. </div>
   </div>
 </div>

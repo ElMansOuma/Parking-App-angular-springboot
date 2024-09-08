@@ -8,13 +8,13 @@
       <p>Fullname Example</p>
     </div>
     <ul class="nav-links">
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Booking</a></li>
-      <li><a href="#">Vehicle</a></li>
-      <li><a href="#">Parking Slot</a></li>
-      <li><a href="#">Payment</a></li>
-      <li><a href="#">User Management</a></li>
-      <li><a href="#">Logout</a></li>
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+      <li><a routerLink="/booking">Booking</a></li>
+      <li><a routerLink="/vehicule">Vehicle</a></li>
+      <li><a routerLink="/parking-slot">Parking Slot</a></li>
+      <li><a routerLink="/payment">Payment</a></li>
+      <li><a routerLink="/user-management">User Management</a></li>
+      <li><a routerLink="/logout">Logout</a></li>
     </ul>
   </div>
 
@@ -41,30 +41,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>$100.00</td>
-            <td>2024-08-28</td>
-            <td>John Doe</td>
-            <td>Completed</td>
+          <tr *ngFor="let payment of payments">
+            <td>{{ payment.id }}</td>
+            <td>{{ payment.amount | currency }}</td>
+            <td>{{ payment.date }}</td>
+            <td>{{ payment.customer }}</td>
+            <td>{{ payment.status }}</td>
             <td>
               <a href="#" class="edit-btn">Edit</a>
               <a href="#" class="delete-btn">Delete</a>
             </td>
           </tr>
-          <!-- Additional rows as needed -->
         </tbody>
       </table>
-
-      <!-- Pagination (if necessary) -->
-      <div class="pagination">
-        <span>Showing 1 to 1 of 1 entries</span>
-        <div class="pagination-controls">
-          <a href="#">Previous</a>
-          <a href="#">1</a>
-          <a href="#">Next</a>
-        </div>
-      </div>
     </div>
 
     <!-- Add Payment Modal -->
@@ -80,37 +69,33 @@
             <form>
               <div class="mb-3">
                 <label for="paymentAmount" class="form-label">Amount</label>
-                <input type="text" class="form-control" id="paymentAmount" placeholder="Enter Amount">
+                <input type="number" class="form-control" id="paymentAmount" [(ngModel)]="paymentAmount" name="amount">
               </div>
               <div class="mb-3">
                 <label for="paymentDate" class="form-label">Date</label>
-                <input type="date" class="form-control" id="paymentDate">
+                <input type="date" class="form-control" id="paymentDate" [(ngModel)]="paymentDate" name="date">
               </div>
               <div class="mb-3">
                 <label for="paymentCustomer" class="form-label">Customer</label>
-                <input type="text" class="form-control" id="paymentCustomer" placeholder="Enter Customer Name">
+                <input type="text" class="form-control" id="paymentCustomer" [(ngModel)]="paymentCustomer"
+                  name="customer">
               </div>
               <div class="mb-3">
                 <label for="paymentStatus" class="form-label">Status</label>
-                <select class="form-select" id="paymentStatus">
-                  <option>Pending</option>
-                  <option>Completed</option>
-                  <option>Failed</option>
+                <select class="form-select" id="paymentStatus" [(ngModel)]="paymentStatus" name="status">
+                  <option value="Pending">Pending</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Failed">Failed</option>
                 </select>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" (click)="addPayment()">Submit</button>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      ParkZen Parking Management System. All rights reserved.
     </div>
   </div>
 </div>

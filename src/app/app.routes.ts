@@ -2,24 +2,26 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { BookingComponent } from './admin/booking/booking.component';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { VehiculeComponent } from './admin/vehicule/vehicule.component';
-import { ParkingSlotComponent } from './admin/parking-slot/parking-slot.component';
-import { PaymentComponent } from './admin/payment/payment.component';
-import { UserDashboardComponent } from './User/user-dashboard/user-dashboard.component';
-import { BookingRequestComponent } from './User/booking-request/booking-request.component';
+import { BookingComponent } from './user/booking/booking.component';
+import { DashboardComponent } from './user/dashboard/dashboard.component';
+import { ParkingSlotComponent } from './user/parking-slot/parking-slot.component';
+import { PaymentComponent } from './user/payment/payment.component';
+import { UserDashboardComponent } from './admin/user-dashboard/user-dashboard.component';
+import { BookingRequestComponent } from './admin/booking-request/booking-request.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserManagementComponent } from './user/user-management/user-management.component';
+import { VehiculeComponent } from './user/vehicule/vehicule.component';
 
 export const routes: Routes = [
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'booking', component: BookingComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'vehicule', component: VehiculeComponent },
+  { path: 'user-management', component: UserManagementComponent },
   { path: 'parking-slot', component: ParkingSlotComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'user-dashboard', component: UserDashboardComponent },

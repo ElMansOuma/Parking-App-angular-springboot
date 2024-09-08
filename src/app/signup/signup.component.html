@@ -3,7 +3,7 @@
   <div class="visual-section">
     <h1>Our Application ParkZen</h1>
     <p class="quote">Secure, accessible, and always ready</p>
-    <p class="quote-author">park with peace of mind.</p>
+    <p class="quote-author">Park with peace of mind.</p>
   </div>
 
   <!-- Right Side: Signup Form -->
@@ -15,24 +15,25 @@
     <p class="subtitle">
       Please register to access your personalized dashboard and experience the future of smart parking.
     </p>
-    <form>
+    <form [formGroup]="signupForm" (ngSubmit)="register()">
       <div class="form-group">
-        <label for="first-name">User Name</label>
-        <input type="text" id="first-name" placeholder="Your first name" />
+        <label for="username">User Name</label>
+        <input formControlName="username" type="text" id="username" placeholder="Your user name" />
       </div>
       <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Your email address" />
+        <input formControlName="email" type="email" id="email" placeholder="Your email address" />
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Your password" />
+        <input formControlName="password" type="password" id="password" placeholder="Your password" />
       </div>
       <div class="form-group">
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" placeholder="Confirm your password" />
+        <label for="confirmPassword">Confirm Password</label>
+        <input formControlName="confirmPassword" type="password" id="confirm-password"
+          placeholder="Confirm your password" />
       </div>
-      <button type="submit" class="signup-btn">Register</button>
+      <button type="submit" class="signup-btn" [disabled]="!signupForm.valid">Register</button>
       <p class="login">
         Already have an account? <a routerLink="/login">Login</a>
       </p>
