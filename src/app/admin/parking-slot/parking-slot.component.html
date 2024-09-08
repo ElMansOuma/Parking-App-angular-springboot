@@ -11,7 +11,7 @@
       <li><a routerLink="/dashboard">Dashboard</a></li>
       <li><a routerLink="/booking">Booking</a></li>
       <li><a routerLink="/vehicule">Vehicle</a></li>
-      <li><a routerLink="/parking-slot">Parking Slot</a></li>
+      <li><a routerLink="/parking-slot" class="active">Parking Slot</a></li>
       <li><a routerLink="/payment">Payment</a></li>
       <li><a routerLink="/user-management">User Management</a></li>
       <li><a routerLink="/logout">Logout</a></li>
@@ -47,8 +47,7 @@
             <td>{{ slot.location }}</td>
             <td>{{ slot.status }}</td>
             <td>
-              <button class="edit-btn" (click)="editSlot(slot)">Edit</button>
-              <button class="delete-btn" (click)="deleteSlot(slot.id)">Delete</button>
+              <button (click)="deleteSlot(slot)" class="delete-btn">Delete</button>
             </td>
           </tr>
         </tbody>
@@ -68,25 +67,27 @@
             <form>
               <div class="mb-3">
                 <label for="slotNumber" class="form-label">Slot Number</label>
-                <input type="text" class="form-control" id="slotNumber" [(ngModel)]="newSlot.slotNumber">
+                <input type="text" class="form-control" id="slotNumber" placeholder="Enter Slot Number"
+                  [(ngModel)]="newSlot.slotNumber" name="slotNumber">
               </div>
               <div class="mb-3">
                 <label for="slotLocation" class="form-label">Location</label>
-                <input type="text" class="form-control" id="slotLocation" [(ngModel)]="newSlot.location">
+                <input type="text" class="form-control" id="slotLocation" placeholder="Enter Location"
+                  [(ngModel)]="newSlot.location" name="location">
               </div>
               <div class="mb-3">
                 <label for="slotStatus" class="form-label">Status</label>
-                <select class="form-select" id="slotStatus" [(ngModel)]="newSlot.status">
-                  <option>Available</option>
-                  <option>Occupied</option>
-                  <option>Maintenance</option>
+                <select class="form-select" id="slotStatus" [(ngModel)]="newSlot.status" name="status">
+                  <option value="Available">Available</option>
+                  <option value="Occupied">Occupied</option>
+                  <option value="Maintenance">Maintenance</option>
                 </select>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" (click)="addSlot()">Submit</button>
+            <button type="button" class="btn btn-primary" (click)="addParkingSlot()">Submit</button>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { BookingComponent } from './user/booking/booking.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { ParkingSlotComponent } from './admin/parking-slot/parking-slot.component';
 import { PaymentComponent } from './user/payment/payment.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { BookingRequestComponent } from './admin/booking-request/booking-request.component';

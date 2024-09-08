@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../environments/environment';
+import { ParkingSlot } from './models/parking-slot.model';
+import { Vehicle } from './models/vehicle.model';  // Ensure the Vehicle import
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
-  private apiUrl = `${environment.api_url}/api/dashboard`;
+  private apiUrl = 'http://localhost:8084/api/dashboard';  // Your backend API URL
 
   constructor(private http: HttpClient) { }
 
-  getParkingSlots(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/parking-slots`);
+  getParkingSlots(): Observable<ParkingSlot[]> {
+    return this.http.get<ParkingSlot[]>(`${this.apiUrl}/parking-slots`);
   }
 
-  getOwnedVehicles(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/owned-vehicles`);
+  getOwnedVehicles(userId: number): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(`${this.apiUrl}/owned-vehicles/${userId}`);
   }
 }

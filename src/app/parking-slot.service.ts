@@ -1,25 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../environments/environment';
+import { ParkingSlot } from './models/parking-slot.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParkingSlotService {
-  private apiUrl = `${environment.api_url}/api/parking-slots`;
+  private apiUrl = 'http://localhost:8084/api/parking-slots';  // Change to your actual backend API URL
 
   constructor(private http: HttpClient) { }
 
-  getAllSlots(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  // Get all parking slots
+  getAllParkingSlots(): Observable<ParkingSlot[]> {
+    return this.http.get<ParkingSlot[]>(this.apiUrl);
   }
 
-  addSlot(slot: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, slot);
+  // Add a parking slot
+  addParkingSlot(slot: ParkingSlot): Observable<ParkingSlot> {
+    return this.http.post<ParkingSlot>(this.apiUrl, slot);
   }
 
-  deleteSlot(id: number): Observable<void> {
+  // Delete a parking slot
+  deleteParkingSlot(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

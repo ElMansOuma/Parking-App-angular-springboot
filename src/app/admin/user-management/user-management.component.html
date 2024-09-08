@@ -13,7 +13,7 @@
       <li><a routerLink="/vehicule">Vehicle</a></li>
       <li><a routerLink="/parking-slot">Parking Slot</a></li>
       <li><a routerLink="/payment">Payment</a></li>
-      <li><a routerLink="/user-management">User Management</a></li>
+      <li><a routerLink="/user-management" class="active">User Management</a></li>
       <li><a routerLink="/logout">Logout</a></li>
     </ul>
   </div>
@@ -41,70 +41,63 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>johndoe</td>
-            <td>johndoe example.com</td>
-            <td>Admin</td>
-            <td>Active</td>
+          <!-- Loop through the users and display their data -->
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
+            <td>{{ user.status }}</td>
             <td>
-              <a href="#" class="edit-btn">Edit</a>
-              <a href="#" class="delete-btn">Delete</a>
+              <button (click)="editUser(user)" class="edit-btn" data-bs-toggle="modal"
+                data-bs-target="#addUserModal">Edit</button>
+              <button (click)="deleteUser(user.id)" class="delete-btn">Delete</button>
             </td>
           </tr>
-          <!-- Additional rows as needed -->
         </tbody>
       </table>
-
-      <!-- Pagination (if necessary) -->
-      <div class="pagination">
-        <span>Showing 1 to 1 of 1 entries</span>
-        <div class="pagination-controls">
-          <a href="#">Previous</a>
-          <a href="#">1</a>
-          <a href="#">Next</a>
-        </div>
-      </div>
     </div>
 
-    <!-- Add User Modal -->
+    <!-- Add/Edit User Modal -->
     <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="addUserModalLabel">Add User</h5>
+            <h5 class="modal-title" id="addUserModalLabel">{{ editMode ? 'Edit User' : 'Add User' }}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter Username">
+                <input type="text" class="form-control" id="username" [(ngModel)]="newUser.username" name="username"
+                  placeholder="Enter Username">
               </div>
               <div class="mb-3">
                 <label for="userEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="userEmail" placeholder="Enter Email">
+                <input type="email" class="form-control" id="userEmail" [(ngModel)]="newUser.email" name="email"
+                  placeholder="Enter Email">
               </div>
               <div class="mb-3">
                 <label for="userRole" class="form-label">Role</label>
-                <select class="form-select" id="userRole">
-                  <option>Admin</option>
-                  <option>User</option>
-                  <!-- Additional roles as needed -->
+                <select class="form-select" id="userRole" [(ngModel)]="newUser.role" name="role">
+                  <option value="Admin">Admin</option>
+                  <option value="User">User</option>
                 </select>
               </div>
               <div class="mb-3">
                 <label for="userStatus" class="form-label">Status</label>
-                <select class="form-select" id="userStatus">
-                  <option>Active</option>
-                  <option>Inactive</option>
+                <select class="form-select" id="userStatus" [(ngModel)]="newUser.status" name="status">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
                 </select>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" (click)="addUser()">{{ editMode ? 'Update User' : 'Submit'
+              }}</button>
           </div>
         </div>
       </div>
