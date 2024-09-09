@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { DashboardService } from '../../dashboard.service';
+import { DashboardService } from '../../shared/services/userdashboard.service';
 
 @Component({
   selector: 'app-user-dashboard',

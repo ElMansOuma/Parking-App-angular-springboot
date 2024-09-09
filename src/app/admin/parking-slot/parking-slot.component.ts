@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';  // Ensure Router import
-import { ParkingSlotService } from '../../parking-slot.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ParkingSlot } from '../../models/parking-slot.model';
+import { ParkingSlot } from '../../shared/models/parking-slot.model';
+import { ParkingSlotService } from '../../shared/services/parking-slot.service';
 
 @Component({
   selector: 'app-parking-slot',

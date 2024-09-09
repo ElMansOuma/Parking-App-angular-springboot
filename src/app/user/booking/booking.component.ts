@@ -1,11 +1,11 @@
 // src/app/user/booking/booking.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BookingService } from '../../booking.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Booking } from '../../models/booking.model';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';  // Importation de CommonModule
+import { BookingService } from '../../shared/services/booking.service';
+import { Booking } from '../../shared/models/booking.model';
 
 @Component({
   selector: 'app-booking',

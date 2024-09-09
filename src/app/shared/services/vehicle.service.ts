@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { VehicleCategory, VehicleOwner } from './models/vehicle.model';  // Importing the specific models
+import { VehicleCategory, VehicleOwner } from '../models/vehicle.model';  // Importing the specific models
 
 @Injectable({
   providedIn: 'root'

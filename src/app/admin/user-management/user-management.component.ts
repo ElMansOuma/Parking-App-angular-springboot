@@ -3,7 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { User } from '../../models/user.model';
+import { User } from '../../shared/models/user.model';
 
 @Component({
   selector: 'app-user-management',

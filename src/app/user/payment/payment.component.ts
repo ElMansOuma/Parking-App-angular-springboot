@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { PaymentService } from '../../payment.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Payment } from '../../models/payment.model';
+import { PaymentService } from '../../shared/services/payment.service';
+import { Payment } from '../../shared/models/payment.model';
 
 @Component({
   selector: 'app-payment',

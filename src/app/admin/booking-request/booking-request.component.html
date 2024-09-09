@@ -1,0 +1,93 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar content -->
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+      <h1>Booking Request</h1>
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addRequestModal">+ Add</button>
+    </div>
+
+    <!-- Booking Request Table -->
+    <div class="table-container">
+      <h2>Booking Request Data Table</h2>
+      <table class="booking-table">
+        <thead>
+          <tr>
+            <th>Reference No.</th>
+            <th>Booking Date</th>
+            <th>Vehicle</th>
+            <th>Slot Number</th>
+            <th>Status</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of requests; let i = index">
+            <td>{{ request.reference }}</td>
+            <td>{{ request.date }}</td>
+            <td>{{ request.vehicle }}</td>
+            <td>{{ request.slot }}</td>
+            <td>{{ request.status }}</td>
+            <td>{{ request.remarks }}</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="editRequest(i)" data-bs-toggle="modal"
+                data-bs-target="#addRequestModal">Edit</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteRequest(i)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Add/Edit Request Modal -->
+    <div class="modal fade" id="addRequestModal" tabindex="-1" aria-labelledby="addRequestModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addRequestModalLabel">{{ editMode ? 'Edit Request' : 'Add Request' }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="bookingDate" class="form-label">Booking Date</label>
+                <input type="date" class="form-control" id="bookingDate" [(ngModel)]="newRequest.date" name="date">
+              </div>
+              <div class="mb-3">
+                <label for="vehicle" class="form-label">Vehicle</label>
+                <input type="text" class="form-control" id="vehicle" [(ngModel)]="newRequest.vehicle" name="vehicle">
+              </div>
+              <div class="mb-3">
+                <label for="slot" class="form-label">Slot</label>
+                <input type="text" class="form-control" id="slot" [(ngModel)]="newRequest.slot" name="slot">
+              </div>
+              <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-select" id="status" [(ngModel)]="newRequest.status" name="status">
+                  <option value="Pending">Pending</option>
+                  <option value="Confirmed">Confirmed</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="remarks" class="form-label">Remarks</label>
+                <textarea class="form-control" id="remarks" [(ngModel)]="newRequest.remarks" name="remarks"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="submitRequest()">{{ editMode ? 'Update' : 'Submit'
+              }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

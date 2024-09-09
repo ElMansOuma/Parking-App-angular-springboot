@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Import FormsModule for [(ngModel)]
 import { CommonModule } from '@angular/common';
-import { VehicleService } from '../../vehicle.service';
 import { HttpClientModule } from '@angular/common/http';
-import { VehicleCategory, VehicleOwner } from '../../models/vehicle.model';
+import { VehicleService } from '../../shared/services/vehicle.service';
+import { VehicleCategory, VehicleOwner } from '../../shared/models/vehicle.model';
 
 @Component({
   selector: 'app-vehicule',

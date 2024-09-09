@@ -1,0 +1,38 @@
+<div class="login-container">
+  <!-- Left Side: Visual and Quote -->
+  <div class="visual-section">
+    <h1>Our Application ParkZen</h1>
+    <p class="quote">Secure, accessible, and always ready.</p>
+    <p class="quote-author">Park with peace of mind.</p>
+  </div>
+
+  <!-- Right Side: Login Form -->
+  <div class="login-section">
+    <h2>Welcome to ParkZen</h2>
+    <p class="subtitle">
+      Log in to access your parking management dashboard and experience the future of smart parking.
+    </p>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Your email address" required email
+          class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Your password" required
+          minlength="6" class="form-control" />
+      </div>
+      <div class="form-options">
+        <label>
+          <input type="checkbox" /> Remember Me
+        </label>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+      </div>
+      <button type="submit" class="login-btn" [disabled]="!loginForm.valid">Login</button>
+      <p class="register">
+        No account registered yet? <a routerLink="/signup">Register</a>
+      </p>
+    </form>
+  </div>
+</div>
