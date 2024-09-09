@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';  // Ensure Router import
+import { Router, RouterLink } from '@angular/router';  // Ensure Router import
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ParkingSlot } from '../../shared/models/parking-slot.model';
 import { ParkingSlotService } from '../../shared/services/parking-slot.service';
+import { ParkingSlot } from '../../shared/models/parking-slot.model';
 
 @Component({
   selector: 'app-parking-slot',
@@ -13,7 +13,8 @@ import { ParkingSlotService } from '../../shared/services/parking-slot.service';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    RouterLink
   ],
   templateUrl: './parking-slot.component.html',
   styleUrls: ['./parking-slot.component.css']

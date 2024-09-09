@@ -13,6 +13,7 @@ import { UserManagementComponent } from './admin/user-management/user-management
 import { VehiculeComponent } from './user/vehicule/vehicule.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { LoginComponent } from './user/login/login.component';
+import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,5 +31,7 @@ export const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: UserProfileComponent },
+  { path: 'admin-profile', component: AdminProfileComponent },
+
   { path: '**', component: PageNotFoundComponent }
 ];

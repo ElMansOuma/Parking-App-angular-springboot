@@ -9,7 +9,14 @@ import { Payment } from '../../shared/models/payment.model';
 @Component({
   selector: 'app-payment',
   standalone: true,
-  imports: [FormsModule, CommonModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterLink
+
+  ],
   templateUrl: './payment.component.html',
   styleUrl: './payment.component.css'
 })

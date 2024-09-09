@@ -4,11 +4,18 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { VehicleService } from '../../shared/services/vehicle.service';
 import { VehicleCategory, VehicleOwner } from '../../shared/models/vehicle.model';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-vehicule',
   standalone: true,
-  imports: [FormsModule, CommonModule, ReactiveFormsModule, HttpClientModule], // Ensure FormsModule is imported
+  imports: [
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterLink
+  ], // Ensure FormsModule is imported
   templateUrl: './vehicule.component.html',
   styleUrls: ['./vehicule.component.css']
 })

@@ -1,6 +1,6 @@
 // src/app/user/booking/booking.component.ts
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';  // Importation de CommonModule
@@ -14,7 +14,8 @@ import { Booking } from '../../shared/models/booking.model';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    CommonModule  // Ajout de CommonModule pour utiliser *ngFor et *ngIf
+    CommonModule,
+    RouterLink
   ],
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css']

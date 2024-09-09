@@ -1,17 +1,19 @@
 <div class="dashboard-container">
+  <!-- Sidebar -->
   <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>Parking Management</h2>
+    </div>
     <div class="user-info">
-      <img src="assets/avatar.png" alt="User Avatar" class="avatar">
-      <h3>Fullname Example</h3>
+      <p></p>
     </div>
     <ul class="nav-links">
-      <li><a routerLink="user-dashboard">Dashboard</a></li>
-      <li><a routerLink="profile">Profile</a></li>
-      <li><a routerLink="booking">Booking</a></li>
-      <li><a routerLink="vehicule">Vehicle</a></li>
-      <li><a routerLink="payment">Payment</a></li>
-      <li><a routerLink="/logout">Logout</a></li>
-      <li><a (click)="logout()" class="logout">Logout</a></li>
+      <li><a [routerLink]="['/','user-dashboard']">Dashboard</a></li>
+      <li><a [routerLink]="['/','profile']">Profile</a></li>
+      <li><a [routerLink]="['/','booking']">Booking</a></li>
+      <li><a [routerLink]="['/','vehicule']">Vehicle</a></li>
+      <li><a [routerLink]="['/','payment']">Payment</a></li>
+      <li><a [routerLink]="['/','logout']">Logout</a></li>
     </ul>
   </div>
 
