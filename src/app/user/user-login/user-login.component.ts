@@ -1,29 +1,27 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { response } from 'express';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../shared/services/auth.service';
+import { AuthUserService } from '../../shared/services/auth-user.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-user-login',
+  templateUrl: './user-login.component.html',
+  styleUrls: ['./user-login.component.css'],
   standalone: true,
-  imports: [FormsModule, HttpClientModule],
-  providers: [AuthService, NgModel]
+  imports: [FormsModule, HttpClientModule]
 })
-export class LoginComponent {
+export class UserLoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private authUserService: AuthUserService, private router: Router) { }
 
   login() {
-    this.auth.login(this.email, this.password).subscribe({
+    this.authUserService.login(this.email, this.password).subscribe({
       next: (response) => {
         console.log('Login successful', response);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/profile']);
       },
       error: (error) => {
         console.error('Login failed', error);

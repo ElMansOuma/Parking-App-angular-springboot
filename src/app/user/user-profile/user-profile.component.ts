@@ -6,7 +6,8 @@ import { ProfileUser } from '../../shared/models/profile-user.model';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthUserService } from '../../shared/services/auth-user.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -21,33 +22,33 @@ import { RouterLink } from '@angular/router';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css'],
 })
-export class UserProfileComponent implements OnInit {
-  profileUser: ProfileUser = {
-    id: 0,
-    username: '',
-    email: '',
-    fullName: '',
-    phoneNumber: '',
-    address: ''
-  };
+export class UserProfileComponent {
+  currentPassword: string = '';
+  newPassword: string = '';
+  confirmPassword: string = '';
+  showChangePasswordForm: boolean = false;
 
-  constructor(private profileUserService: ProfileUserService) { }
+  constructor(private authService: AuthUserService, private router: Router) { }
 
-  ngOnInit(): void {
-    this.loadUserProfile(1);  // You can replace '1' with the current user ID dynamically
+  toggleChangePasswordForm() {
+    this.showChangePasswordForm = !this.showChangePasswordForm;
   }
 
-  // Load user profile from the service
-  loadUserProfile(userId: number): void {
-    this.profileUserService.getProfileUser(userId).subscribe((data: ProfileUser) => {
-      this.profileUser = data;
-    });
-  }
+  changePassword() {
+    if (this.newPassword !== this.confirmPassword) {
+      alert('New passwords do not match');
+      return;
+    }
 
-  // Update user profile
-  saveProfile(): void {
-    this.profileUserService.updateProfileUser(this.profileUser).subscribe(response => {
-      console.log('Profile updated successfully', response);
+    this.authService.changePassword(this.currentPassword, this.newPassword).subscribe({
+      next: (response) => {
+        alert('Password changed successfully');
+        this.showChangePasswordForm = false;
+      },
+      error: (error) => {
+        console.error('Failed to change password', error);
+        alert('Failed to change password');
+      }
     });
   }
 }

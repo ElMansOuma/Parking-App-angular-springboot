@@ -1,84 +1,56 @@
-/* Gradient background */
-body {
-  font-family: 'Arial, sans-serif';
+.profile-container {
   background: linear-gradient(135deg, #8FBC8F, #2E8B57);
-  color: #ffffff;
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Header styles */
-header {
-  background-color: rgb(61, 87, 61);
-  /* Header dark green */
-  padding: 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header .logo {
-  display: flex;
-  align-items: center;
-}
-
-header .logo img {
-  width: 45px;
-  margin-right: 10px;
-}
-
-header .logo span {
-  font-size: 1.6em;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-header .nav-links {
-  display: flex;
-  gap: 25px;
-}
-
-header .nav-links a {
-  color: #b2dfdb;
-  /* Light green link color */
-  text-decoration: none;
-  font-weight: 500;
-  padding-bottom: 5px;
-  position: relative;
-}
-
-header .nav-links a:hover {
-  color: #ffffff;
-}
-
-header .nav-links a:hover::after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: #b2dfdb;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-/* Form container */
-.form-container {
-  margin: auto;
-  padding: 30px;
-  max-width: 500px;
-  background-color: rgba(255, 255, 255, 0.8);
-  /* Semi-transparent white background */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   border-radius: 10px;
-  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: white;
 }
 
-.form-container h2 {
-  font-size: 1.8em;
-  color: rgb(61, 87, 61);
-  /* Match the header color */
+h2 {
+  font-size: 24px;
   margin-bottom: 20px;
+}
+
+.profile-info p {
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #1A73E8;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.change-password-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #2E8B57;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
