@@ -1,0 +1,19 @@
+.logout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Arial, sans-serif';
+  background-color: DarkSeaGreen;
+  color: #ffffff;
+}
+
+.logout-container h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.logout-container p {
+  font-size: 1.2em;
+}

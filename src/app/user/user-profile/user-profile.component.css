@@ -1,56 +1,72 @@
-.profile-container {
-  background: linear-gradient(135deg, #8FBC8F, #2E8B57);
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
-  margin: 0 auto;
-  color: white;
-}
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.profile-info p {
-  font-size: 16px;
-}
-
-.btn-primary {
-  background-color: #1A73E8;
+/* Header Styles */
+header {
+  background-color: rgb(61, 87, 61);
+  /* Darker green header background */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #ffffff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-.change-password-form {
-  margin-top: 20px;
+header .logo {
+  display: flex;
+  align-items: center;
 }
 
-.form-group {
-  margin-bottom: 15px;
+header .logo img {
+  width: 40px;
+  margin-right: 10px;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
+header .logo span {
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+header .nav-links {
+  display: flex;
+  gap: 20px;
 }
 
-button[type="submit"] {
-  background-color: #2E8B57;
+header .nav-links a {
   color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header .nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Form Container Styles */
+.form-container {
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 600px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.form-container h1 {
+  font-size: 2rem;
+  color: #2E8B57;
+  margin-bottom: 20px;
+}
+
+.form-container p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Background Gradient */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #8FBC8F, #2E8B57);
+  /* Gradient background */
+  color: #333;
+  margin: 0;
+  padding: 0;
 }

@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { DashboardService } from '../../shared/services/dashboard.service';
 import { DashboardStats } from '../../shared/models/dashboard-stats.model';
+import { routes } from '../../app.routes';
+
 
 @Component({
   selector: 'dashboard-app',

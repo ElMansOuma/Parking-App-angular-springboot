@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { environment } from '../../../environments/environment.prod';
 import { User } from '../models/user.model';
+import { environment } from '../../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +24,9 @@ export class AuthService {
   register(username: string, email: string, password: string): Observable<User> {
     const registerPayload = { username, email, password };
     return this.http.post<User>(`${this.apiUrl}/register`, registerPayload);
+  }
+  changePassword(currentPassword: string, newPassword: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/change-password`, { currentPassword, newPassword })
+
   }
 }
